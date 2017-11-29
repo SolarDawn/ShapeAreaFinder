@@ -1,6 +1,6 @@
 /*
 	Name : SolarFlare
-	Program : Area Finding
+	Program : Finds area of shapes
 */
 
 //Include Appropriate Header Files
@@ -53,10 +53,13 @@ int menu(){
 	cin >> choice;
 	switch (choice) {
 		case 1:
+			//Sets object as a square and requests user input
 			Square sqr;
 			cout << "Please Enter A Value" << endl;
 			cin >> x;
+			//Sets input values equal to user input
 			sqr.setValues(x, x);
+			//Output calculated value
 			cout << endl;
 			cout << sqr.calculateArea();	
 			cout << endl;
@@ -64,12 +67,15 @@ int menu(){
 			doAgain();
 			break;
 		case 2:
+			//Sets object as a rectangle and requests user input
 			Rectangle rect;
 			cout << "Please Enter The Width" << endl;
 			cin >> x;
 			cout << "Please Enter The Height" << endl;
 			cin >> y;
+			//Sets input values equal to user input
 			rect.setValues(x, y);
+			//Output calculated value
 			cout << endl;
 			cout << rect.calculateArea();
 			cout << endl;
@@ -77,12 +83,15 @@ int menu(){
 			doAgain();
 			break;
 		case 3:
+			//Sets object as a triangle and requests user input
 			Triangle tri;
 			cout << "Please Enter The Width" << endl;
 			cin >> x;
 			cout << "Please Enter The Height" << endl;
 			cin >> y;
+			//Sets input values equal to user input
 			tri.setValues(x, y);
+			//Output calculated value
 			cout << endl;
 			cout << tri.calculateArea();
 			cout << endl;
@@ -90,10 +99,13 @@ int menu(){
 			doAgain();
 			break;
 		case 4:
+			//Sets object as a circle and requests user input
 			Circle cir;
 			cout << "Please Enter The Diameter" << endl;
 			cin >> x;
+			//Sets input values equal to user input
 			cir.setValues(x, x);
+			//Output calculated value
 			cout << endl;
 			cout << cir.calculateArea();
 			cout << endl;
@@ -104,6 +116,7 @@ int menu(){
 			quit();
 			break;
 		default:
+			//Clear screen and show invalid input has been enter
 			system("cls");
 			cout << "Invalid Input" << endl;
 			menu();
@@ -119,6 +132,7 @@ void Shape::setValues(float x, float y) {
 
 void doAgain() {
 	char answer;
+	//Prompt user if they would like to use the program again
 	cout << endl;
 	cout << "Do You Want To Do Again? (Y/N)" << endl;
 	cin >> answer;
@@ -134,10 +148,12 @@ void doAgain() {
 			quit();
 			break;
 		default:
-			cout << "Please Enter A Valid Input" << endl;
+			system("cls");
+			cout << "Please Enter A Valid Input" << endl;	
+			cout << endl;
+			doAgain();
 			break;
-	}
-	
+	}	
 }
 
 float Shape::calculateArea() {    
